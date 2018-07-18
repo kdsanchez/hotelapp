@@ -1,0 +1,79 @@
+<div class="card mt-5">
+    <div class="card-body">
+        <h6 class="text-center">
+            Ingresar Empleado
+          </h6>
+          <form #employeeForm="ngForm" (ngSubmit)= "onSubmit(employeeForm)">
+
+            <!-- campo oculto -->
+
+              <input 
+              type="hidden"
+               name="$key" 
+               #$key="ngModel" 
+               [(ngModel)]="employeeService.selectedEmployee.$key"> 
+          
+               <!-- variables -->
+
+              <div class="form-group">
+                  <label>nombre</label>
+                  <input 
+                  type="text"
+                  class="form-control" 
+                  name="nombre" 
+                  #nombre="ngModel" 
+                  [(ngModel)]="employeeService.selectedEmployee.nombre" 
+                  placeholder="Ingrese nombre">
+                </div>
+  
+                <div class="form-group">
+                    <label>posicion</label>
+                    <input 
+                    type="text"
+                    class="form-control" 
+                    name="posicion" 
+                    #posicion="ngModel" 
+                    [(ngModel)]="employeeService.selectedEmployee.posicion" 
+                    placeholder="Ingrese la posicion">
+                  </div>
+  
+                  <div class="form-group">
+                      <label>oficina</label>
+                      <input 
+                      type="text"
+                      class="form-control" 
+                      name="oficina" 
+                      #oficina="ngModel" 
+                      [(ngModel)]="employeeService.selectedEmployee.oficina" 
+                      placeholder="Ingrese la oficina">
+                    </div>
+  
+                    <div class="form-group">
+                        <label>salario</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                              <i class="fa fa-dollar"></i>
+                            </div>
+                            <input 
+                            type="text"
+                           class="form-control" 
+                            name="salario" 
+                            #salario="ngModel" 
+                            [(ngModel)]="employeeService.selectedEmployee.salario" 
+                            placeholder="Ingrese el salario">
+                        </div>
+                      </div>
+  
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit"
+              [disabled]="!employeeForm.valid">
+            <i class="fas fa-plus-circle"></i> Ingresa nombres
+          </button>
+
+          <button class="btn btn-secondary" type="reset" (click)="resetForm(employeeForm)">
+            <i class="fas fa-sync-alt"></i> Reinicia
+          </button>
+        </div>
+      </form>
+    </div>
+    </div>

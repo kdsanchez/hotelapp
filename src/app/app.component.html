@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="content-wrapper">
+    <app-breadcumb></app-breadcumb>
+   <!-- <app-dashboard></app-dashboard> -->
+    <div class="page-wrapper">
+        <div class="container-fluid pt-25">
+      <!-- Row -->
+      <div class="row">
+    <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+</div>  
+<div>
+    <div class="page-wrapper">
+        <div class="container-fluid pt-25">
+      <!-- Row -->
+      <div class="row">
+        <app-footer></app-footer>
+</div>
+
+
+<!-- <table class="table">
+<thead>
+  <tr>
+    <th>albumId</th>
+    <th>id</th>
+    <th>title</th>
+    <th>url</th>
+    <th>thumbnailUrl</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor= "let photos of photos">
+    <td>{{ photos.albumId }}</td>
+    <td>{{ photos.id }}</td>
+    <td>{{ photos.title }}</td>
+    <td>{{ photos.url }}</td>
+    <td>{{ photos.thumbnailUrl }}</td>
+    </tr>
+</tbody>
+</table> -->

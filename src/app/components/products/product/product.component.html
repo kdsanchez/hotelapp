@@ -1,0 +1,80 @@
+<div class="card mt-5">
+    <div class="card-body">
+        <h6 class="text-center">Ingresar Producto</h6>
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+            <!-- TO UPDATE -->
+            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+  
+            <div class="form-group">
+                <label>Nombre del Producto</label>
+              <input 
+                type="text"
+                class="form-control"
+                name="name"
+                #name="ngModel"
+        [(ngModel)]="productService.selectedProduct.name"
+        placeholder="Ingresar Producto">
+      </div>
+
+      <div class="form-group">
+          <label>Categoria</label>
+          <input 
+          type="text"
+          class="form-control"
+          name="category"
+          #category="ngModel"
+          [(ngModel)]="productService.selectedProduct.category"
+          placeholder="Ingresar categoria">
+        </div>
+
+        <div class="form-group">
+            <label>Localidad</label>
+            <input 
+            type="text"
+            class="form-control"
+            name="location"
+            #location="ngModel"
+            [(ngModel)]="productService.selectedProduct.location"
+            placeholder="Ingresar localidad">
+          </div>
+
+          <!-- <div class="form-group">
+              <input 
+              type="text"
+              class="form.control"
+              name="price"
+              #price="ngModel"
+              [(ngModel)]="productService.selectedProduct.price"
+              placeholder="Ingresar Precio"
+              >
+            </div> -->
+
+        <div class="form-group">
+         <label>Precio</label>
+        <div class="input-group">
+        <div class="input-group-addon">
+          <i class="fa fa-dollar"></i>
+        </div>
+        <input 
+             type="text"
+             class="form-control" 
+             name="price" 
+             #price="ngModel" 
+             [(ngModel)]="productService.selectedProduct.price"
+             placeholder="Ingresar Precio" >
+           </div>
+          </div>
+
+            <div class="form-group">
+              <button class= "btn btn-primary" type="submit">
+                <i class="fas fa-plus-circle"></i> Añadir Producto
+              </button>
+              <button class="btn btn-secondary" type="reset" (click)="resetForm(productForm)">
+                <i class="fas fa-sync-alt"></i> Recetear
+
+              </button>
+            </div>
+
+    </form>
+  </div>
+</div>
