@@ -1,101 +1,7 @@
-      <!-- <div class="row">
-        <div class="col-sm-12">
-          <div class="panel panel-default card-view">
-            <div class="panel-heading">
-              <div class="pull-left">
-                <h6 class="panel-title txt-dark">Tabla de clientes</h6>
-              </div>
-              <div class="clearfix"></div>
-            </div>
-            <button (click)='getCliente()'>Vizualizar Clientes</button>
-            <div class="panel-wrapper collapse in">
-              <div class="panel-body">
-                <div class="table-wrap">
-                  <table id="footable_2" class="table" data-paging="true" data-filtering="true" data-sorting="true">
-                    
-                    <thead>
-                    <tr>
-                      <th data-name="id" data-breakpoints="xs" data-type="number">ID</th>
-                      <th data-name="nombre">Nombre</th>
-                      <th data-name="apaterno">Apellido</th>
-                      <th data-name="num_documento" data-breakpoints="xs">Cedula</th>
-                      <th data-name="telefono" data-breakpoints="xs">Telefono</th>
-                      <th data-name="email" data-breakpoints="xs">Correo</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let cliente of data  | async">
-                            <td>{{cliente.id}}</td>
-                            <td>{{cliente.nombre}}</td>
-                            <td>{{cliente.apaterno}}</td>
-                            <td>{{cliente.num_documento}}</td>
-                            <td>{{cliente.telefono}}</td>
-                            <td>{{cliente.email}}</td>
-                            
-                    </tr>
-                    </tbody>
-                  </table>
-
-              
-                  <div class="modal fade" id="editor-modal" tabindex="-1" role="dialog" aria-labelledby="editor-title">
-                  
-                  <div class="modal-dialog" role="document">
-                    <form class="modal-content form-horizontal" id="editor">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                        <h5 class="modal-title" id="editor-title">Add Row</h5>
-                      </div>
-                      <div class="modal-body">
-                        <input type="number" id="id" name="id" class="hidden"/>
-                        <div class="form-group required">
-                          <label for="nombre" class="col-sm-3 control-label">Nombre</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre" required>
-                          </div>
-                        </div>
-                        <div class="form-group required">
-                          <label for="apaterno" class="col-sm-3 control-label">Apellido</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" id="apaterno" name="apaterno" placeholder="apaterno" required>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label for="num_documento" class="col-sm-3 control-label">Cedula</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" id="num_documento" name="num_documento" placeholder="num_documento">
-                          </div>
-                        </div>
-                        <div class="form-group required">
-                          <label for="telefono" class="col-sm-3 control-label">Telefono</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="telefono" required>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label for="email" class="col-sm-3 control-label">Correo</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" id="email" name="email" placeholder="email">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div> -->
-
 <!-- asdasda -->
 <div class="container">
-    <h2>Tabla de clientes</h2>  
-    <button (click)='getCliente()'>Vizualizar Clientes</button>         
+    <h2>Tabla de clientes</h2>
+    <button (click)='getCliente()'>Vizualizar Clientes</button>
     <table class="table table-bordered">
       <thead>
           <tr>
@@ -118,14 +24,13 @@
               <td>
                 <a class="btn btn-secondary text-white">
                   <i class="far fa-edit"></i>
-                  
+
                 </a>
-                <a class="btn btn-danger text-white">
+                <button class="btn btn-danger text-white" (click)="borrarCliente(cliente.id)">
                   <i class="fas fa-trash-alt"></i>
-                  
-                </a>
+                </button>
               </td>
-            
+
 
           </tr>
       </tbody>
@@ -141,10 +46,10 @@
                         <div class="white-box">
                             <h3 class="box-title"></h3>
                             <div class="table-responsive">
-    
+
                               <button (click)='getCliente()'>Vizualizar Clientes</button>
                                 <table class="table">
-                                  
+
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -156,8 +61,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
-                    
+
+
                                       <tr *ngFor="let cliente of data | async">
                                         <td>{{cliente.id}}</td>
                                         <td>{{cliente.nombre}}</td>
@@ -168,20 +73,20 @@
                                         <td>
                                           <a class="btn btn-secondary text-white">
                                             <i class="far fa-edit"></i>
-                                            
+
                                           </a>
                                           <a class="btn btn-danger text-white">
                                             <i class="fas fa-trash-alt"></i>
-                                            
+
                                           </a>
                                         </td>
-                                      
-    
+
+
                                     </tr>
-                               
+
 
                                     </tbody>
-                               
+
                                 </table>
                             </div>
                         </div>
