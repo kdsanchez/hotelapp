@@ -20,7 +20,7 @@ export class NuevoComponent {
   }
 
   borrarCliente(id) {
-    console.log(id);
+    this.sails.borrarCliente( id );
   }
 
   }

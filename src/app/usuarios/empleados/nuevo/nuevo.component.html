@@ -22,13 +22,12 @@
               <td>{{cliente.telefono}}</td>
               <td>{{cliente.email}}</td>
               <td>
-                <a class="btn btn-secondary text-white">
+                <a class="btn btn-secondary text-white" href="#{{cliente.id}}">
                   <i class="far fa-edit"></i>
-
                 </a>
-                <button class="btn btn-danger text-white" (click)="borrarCliente(cliente.id)">
+                <a class="btn btn-danger text-white" href="http://localhost:1337/tablacontacto/destroy/{{cliente.id}}">
                   <i class="fas fa-trash-alt"></i>
-                </button>
+                </a>
               </td>
 
 
@@ -36,59 +35,3 @@
       </tbody>
     </table>
   </div>
-
-
-      <!-- asdadadas -->
-      <!-- <div class="overlay-box">
-        <div class="user-content">
-                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="white-box">
-                            <h3 class="box-title"></h3>
-                            <div class="table-responsive">
-
-                              <button (click)='getCliente()'>Vizualizar Clientes</button>
-                                <table class="table">
-
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Nombres</th>
-                                            <th>Apellidos</th>
-                                            <th>Cedula </th>
-                                            <th>Telefono</th>
-                                            <th>Correo</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-
-                                      <tr *ngFor="let cliente of data | async">
-                                        <td>{{cliente.id}}</td>
-                                        <td>{{cliente.nombre}}</td>
-                                        <td>{{cliente.apaterno}}</td>
-                                        <td>{{cliente.num_documento}}</td>
-                                        <td>{{cliente.telefono}}</td>
-                                        <td>{{cliente.email}}</td>
-                                        <td>
-                                          <a class="btn btn-secondary text-white">
-                                            <i class="far fa-edit"></i>
-
-                                          </a>
-                                          <a class="btn btn-danger text-white">
-                                            <i class="fas fa-trash-alt"></i>
-
-                                          </a>
-                                        </td>
-
-
-                                    </tr>
-
-
-                                    </tbody>
-
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
