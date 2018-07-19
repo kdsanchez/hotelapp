@@ -1,88 +1,56 @@
-<!-- <div class="overlay-box" >
-  <div class="user-content"  > -->
-             <!-- /row -->
-              <!-- <div class="row">
-                  <div class="col-lg-4 col-sm-8">
-                      <div class="white-box" item-width="200px">
-                          <h6 class="box-title" >Registro</h6>
-                          <table border="0">
-                            <form action="http://localhost:1337/tablacontacto/create?nombre=&apaterno=" >
-                              <div class="form-group">
-                          <tr>
-                              <td><label for="nombre">Nombres: </label></td>
-                              <td><input type="text" name="nombre"  class="form-control"></td>
-                          </tr>
-                           <tr>
-                               <td><label for="apaterno">Apellidos: </label></td>
-                               <td><input type="text" name="apaterno"  class="form-control"></td>
-                           </tr>
 
-                           <td><input type="submit" value="Registrar" class="btn btn-primary"></td>
-                          </div>
-                          </form>
-                          </table>
-                          </div>
-                          </div>
-                          </div>
-                        </div>
-                      </div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="well well-sm">
+        <!-- <form > -->
+          <fieldset>
+            <legend class="text-center header">Registro de contacto</legend>
+            <form class="form-horizontal" #insertClient="ngForm" (ngSubmit)="registrar(insertClient)">
+              <div class="form-group">
+                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                <div class="col-md-8">
+                  <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control" [(ngModel)]="nombre">
+                </div>
+              </div>
+              <div class="form-group">
+                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                <div class="col-md-8">
+                  <input id="apaterno" name="apaterno" type="text" placeholder="Apellido" class="form-control" [(ngModel)]="apellido">
+                </div>
+              </div>
+              <div class="form-group">
+                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                <div class="col-md-8">
+                  <input id="num_documento" name="num_documento" type="text" placeholder="Cedula" class="form-control" [(ngModel)]="cedula">
+                </div>
+              </div>
 
-                   <!-- formulario de registro -->
-                      <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="well well-sm">
-                                        <form class="form-horizontal" method="post">
-                                            <fieldset>
-                                                <legend class="text-center header">Registro de contacto</legend>
-                                                <form action="http://localhost:1337/tablacontacto/create" >
-                                                <div class="form-group">
-                                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                                    <div class="col-md-8">
-                                                        <input id="nombre" name="nombre" type="text" placeholder="Nombre" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                                    <div class="col-md-8">
-                                                        <input id="apaterno" name="apaterno" type="text" placeholder="Apellido" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                                        <div class="col-md-8">
-                                                            <input id="num_documento" name="num_documento" type="text" placeholder="Cedula" class="form-control">
-                                                        </div>
-                                                    </div>
+              <div class="form-group">
+                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                <div class="col-md-8">
+                  <input id="telefono" name="telefono" type="text" placeholder="Telefono" class="form-control" [(ngModel)]="telefon">
+                </div>
+              </div>
+              <div class="form-group">
+                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                <div class="col-md-8">
+                  <input id="email" name="email" type="text" placeholder="Correo" class="form-control" [(ngModel)]="correo">
+                </div>
+              </div>
 
-                                                    <div class="form-group">
-                                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                                                        <div class="col-md-8">
-                                                            <input id="telefono" name="telefono" type="text" placeholder="Telefono" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                <div class="form-group">
-                                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                                                    <div class="col-md-8">
-                                                        <input id="email" name="email" type="text" placeholder="Correo" class="form-control">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <div class="col-md-12 text-center">
-                                                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                                                        <button class= "btn btn-primary" type="submit">
-                                                                <i class="fas fa-plus-circle"></i> Añadir
-                                                              </button>
-                                                    </div>
-                                                </div>
-                                                </form>
-                                            </fieldset>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+              <div class="form-group">
+                <div class="col-md-12 text-center">
+                  <button type="submit" class="btn btn-primary pull-left">Submit</button>
+                </div>
+              </div>
+            </form>
+          </fieldset>
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!-- asdadasd -->
