@@ -14,15 +14,13 @@ export class NuevoComponent {
   data:Observable<Array<Cliente>>;
 
   constructor(public sails:ApiSailsService) {}
-  
+
   getCliente(): void {
     this.data =this.sails.getCliente();
   }
 
+  borrarCliente(id) {
+    this.sails.borrarCliente( id );
   }
 
- 
-  
-
-
-
+  }
