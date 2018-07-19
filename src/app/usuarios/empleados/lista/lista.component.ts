@@ -18,9 +18,8 @@ export class ListaComponent{
   constructor(public sails:ApiSailsService) { }
 
   registrar(form: NgForm) {
-    console.log(form.value);
-    //this.submitted = true;
-    //this.data=this.sails.getCliente();
+    //console.log(form.value);
+    this.sails.insertClient(form);
   }
 
 }
