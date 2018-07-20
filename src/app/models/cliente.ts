@@ -6,8 +6,8 @@ export interface Cliente {
     apaterno: string;
     amaterno: string;
     tipo_documento: string;
-    num_documento: number;
+    num_documento: string;
     direccion: string;
-    telefono: number;
+    telefono: string;
     email: string;
 }
