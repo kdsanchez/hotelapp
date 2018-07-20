@@ -19,7 +19,7 @@ export class ListaComponent{
 
   registrar(form: NgForm) {
     //console.log(form.value);
-    this.sails.insertClient(form);
+    this.sails.insertClient(form.value);
   }
 
 }
